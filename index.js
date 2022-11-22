@@ -1,7 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const { initializeApp, cert } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
-const serviceaccount = require("./key.json");
+// const serviceaccount = require("./key.json");
+// const string = String(process.env.PROJECT_DATA);
+const serviceaccount = JSON.parse(process.env.PROJECT_DATA);
 
 const app = express();
 app.set("view engine", "ejs");
@@ -70,4 +73,5 @@ app.get("/:id", async (req, res) => {
 });
 app.listen(process.env.PORT || 4000, () => {
   console.log("sever is started on port 4000");
+  // console.log(process.env.PROJECT_DATA);
 });
