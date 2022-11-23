@@ -73,5 +73,5 @@ app.get("/:id", async (req, res) => {
 });
 app.listen(process.env.PORT || 4000, () => {
   console.log("sever is started on port 4000");
-  // console.log(process.env.PROJECT_DATA);
+  console.log(JSON.parse(process.env.PROJECT_DATA));
 });

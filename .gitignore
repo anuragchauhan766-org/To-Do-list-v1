@@ -3,3 +3,4 @@ key.json
 .vscode
 .env.local
 .env
+.vercel
